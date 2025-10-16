@@ -1,0 +1,51 @@
+[
+  {
+    "className": "English 4",
+    "teacher": "Ms. Weksler",
+    "roomNumber": "E100",
+    "period": "1",
+    "subjectArea": "English"
+  },
+  {
+    "className": "Honors NJIT IS219 Advanced Website Development",
+    "teacher": "Mr. Kilgore",
+    "roomNumber": "B111",
+    "period": "2",
+    "subjectArea": "Web Design"
+  },
+  {
+    "className": "AP Calculus AB",
+    "teacher": "Mr. Sandoval",
+    "roomNumber": "A219",
+    "period": "3",
+    "subjectArea": "Calculus"
+  },
+  {
+    "className": "Applied Art 1",
+    "teacher": "Ms. Zeller",
+    "roomNumber": "D105",
+    "period": "4",
+    "subjectArea": "Art"
+  },
+  {
+    "className": "Health 4",
+    "teacher": "Mr. Sininsky",
+    "roomNumber": "C130",
+    "period": "5",
+    "subjectArea": "Health"
+  },
+  {
+    "className": "Italian 4",
+    "teacher": "Sra. Raineri",
+    "roomNumber": "A205",
+    "period": "6",
+    "subjectArea": "Italian"
+  },
+  {
+    "className": "Financial Literacy",
+    "teacher": "Mr. Morgan",
+    "roomNumber": "A132",
+    "period": "7",
+    "subjectArea": "Financial Literacy"
+  }
+]
