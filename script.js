@@ -24,16 +24,20 @@ class _Class {
     e.innerHTML = txt;
     return e;
   }
+  print(out) {
+    out.append(this.cell);
+  }
 }
 
-new _Class("ji", 1, 2, 3, 4);
+const myclass = new _Class("ji", 1, 2, 3, 4);
+myclass.print(document.querySelector("#out"));
 
-fetch("scheduleR.json")
-  .then((data) => data.json())
-  .then((data) => {
-    data.forEach((e) =>
-      document
-        .querySelector("#out")
-        .insertAdjacentHTML("beforeend", `<h2>${e.className}</h2>`)
-    );
-  });
+// fetch("scheduleR.json")
+//   .then((data) => data.json())
+//   .then((data) => {
+//     data.forEach((e) =>
+//       document
+//         .querySelector("#out")
+//         .insertAdjacentHTML("beforeend", `<h2>${e.className}</h2>`)
+//     );
+//   });
