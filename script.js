@@ -28,16 +28,33 @@ class _Class {
     out.append(this.cell);
   }
 }
-
-const myclass = new _Class("ji", 1, 2, 3, 4);
-myclass.print(document.querySelector("#out"));
-
-// fetch("scheduleR.json")
-//   .then((data) => data.json())
-//   .then((data) => {
-//     data.forEach((e) =>
-//       document
-//         .querySelector("#out")
-//         .insertAdjacentHTML("beforeend", `<h2>${e.className}</h2>`)
-//     );
-//   });
+function run(name, output) {
+  output.classList.add("loading");
+  try {
+    fetch(name)
+      .then((data) => data.json())
+      .then((data) => {
+        output.classList.remove("loading");
+        output.innerHTML = "";
+        data.forEach(
+          ({ className, teacher, roomNumber, period, subjectArea }) => {
+            const elem = new _Class(
+              className,
+              teacher,
+              `Room: ${roomNumber}`,
+              `Period: ${period}`,
+              subjectArea
+            );
+            elem.print(output);
+          }
+        );
+      });
+  } catch (error) {
+    output.innerHTML = "Error Loading";
+  }
+}
+const outElem = document.querySelector("#out");
+document.querySelector("#options").addEventListener("change", () => {
+  run(document.querySelector("#options").value, outElem);
+});
+run("remy.json", outElem);

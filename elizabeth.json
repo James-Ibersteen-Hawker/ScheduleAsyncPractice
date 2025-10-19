@@ -1,0 +1,53 @@
+[
+  {
+    "className": "Honors Cybersecurity and Computer programming",
+    "teacher": "Christine Rehwinkel",
+    "roomNumber": "A234",
+    "period": 1,
+    "subjectArea": "Computer safety"
+  },
+
+  {
+    "className": "Honors NJIT IS219 Advanced Website Development WDP",
+    "teacher": "Gregory Kilgore",
+    "roomNumber": "B111",
+    "period": 2,
+    "subjectArea": "Web design"
+  },
+
+  {
+    "className": "Pre Calculus",
+    "teacher": "Christopher Ploe",
+    "roomNumber": "E215",
+    "period": 3,
+    "subjectArea": "Mathematics"
+  },
+  {
+    "className": "BCC ENG121 The Writing Process",
+    "teacher": "Matthew Sauter",
+    "roomNumber": "E111",
+    "period": 4,
+    "subjectArea": "English"
+  },
+  {
+    "className": "AP Computer Science A",
+    "teacher": "Christine Rehwinkel",
+    "roomNumber": "A234",
+    "period": 5,
+    "subjectArea": "Computer Science"
+  },
+  {
+    "className": "Finacial Literacy",
+    "teacher": "Kevin Morgan",
+    "roomNumber": "A132",
+    "period": 6,
+    "subjectArea": "Finance"
+  },
+  {
+    "className": "Physical Education",
+    "teacher": "Diana Keil",
+    "roomNumber": "Main Gym",
+    "period": 7,
+    "subjectArea": "Gym"
+  }
+]
