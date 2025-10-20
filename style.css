@@ -141,9 +141,23 @@ header::before {
     transform: skew(-10deg) translateX(0) translateZ(0);
   }
 }
+.selector {
+  text-align: center;
+  font-size: 20px;
+  padding: 15px;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-weight: 700;
+  border-bottom: 1px solid green;
+  background: rgba(230, 230, 230, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.51);
+  margin-bottom: 10px;
+}
 .tableCell {
   font-family: "Times New Roman", Times, serif;
-  padding: 10px;
+  padding: 7px;
 }
 .container-fluid {
   margin: 0 auto !important;
@@ -157,15 +171,21 @@ header::before {
   box-shadow: 0px 0px 8px green;
   height: 100%;
   width: 100%;
-  padding: 20px;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
 }
 .tableHead {
   text-align: center;
-  padding: 0 !important;
+  padding: 20px !important;
   margin: 0 !important;
+  height: 50%;
   font-family: "Bowlby One SC", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid green;
+  width: 100%;
 }
 .tableHead p {
   padding: 0 !important;
@@ -175,11 +195,36 @@ header::before {
   border-bottom: 1px solid black;
   font-size: 25px;
 }
+.tableBody {
+  text-align: center;
+  height: 50%;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.tableBody p {
+  padding: 2px;
+  margin: 0 !important;
+}
+.tableBody p:first-child {
+  font-style: italic;
+  font-weight: 900;
+  font-size: 22px;
+}
+.tableBody p:nth-child(2) {
+  font-weight: 600;
+}
+.tableBody p:nth-child(3) {
+  font-family: "Bowlby One SC", sans-serif;
+  font-size: 18px;
+}
 footer {
   width: 100%;
   height: 200px;
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
   border-top: 1px solid rgb(170, 170, 170);
   display: flex;
   justify-content: center;
