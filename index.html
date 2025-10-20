@@ -50,8 +50,23 @@
           <option value="remy.json">Remy</option>
           <option value="elizabeth.json">Elizabeth</option>
           <option value=".json">XX</option>
-          <option value=".json">XX</option>
-        </select>
+          <option value=".json">XX</option></select
+        ><br />
+        <label for="sort">Sort By:</label>
+        <select name="sort" id="sorter">
+          <option value="period">Period</option>
+          <option value="teacher">Teacher Last Name</option>
+          <option value="subjectArea">Subject</option>
+          <option value="roomNumber">Room</option>
+          <option value="className">Class Name</option></select
+        ><br />
+        <label for="search">Search:</label>
+        <input
+          type="text"
+          placeholder="Search..."
+          name="search"
+          id="searcher"
+        />
       </div>
       <div
         id="out"
@@ -73,6 +88,7 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

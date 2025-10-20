@@ -176,9 +176,9 @@ header::before {
 }
 .tableHead {
   text-align: center;
-  padding: 20px !important;
+  padding: 0px 20px !important;
   margin: 0 !important;
-  height: 50%;
+  min-height: 50%;
   font-family: "Bowlby One SC", sans-serif;
   display: flex;
   flex-direction: column;
@@ -198,14 +198,14 @@ header::before {
 .tableBody {
   text-align: center;
   height: 50%;
-  padding-bottom: 10px;
   display: flex;
+  padding: 10px 0px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 .tableBody p {
-  padding: 2px;
+  padding: 2px !important;
   margin: 0 !important;
 }
 .tableBody p:first-child {
@@ -223,6 +223,7 @@ header::before {
 footer {
   width: 100%;
   height: 200px;
+  margin-top: 20px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border-top: 1px solid rgb(170, 170, 170);
@@ -233,4 +234,9 @@ footer {
   text-align: center;
   font-style: italic;
   font-family: "Times New Roman", Times, serif;
+}
+#out {
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  min-height: calc(100vh - 400px);
 }

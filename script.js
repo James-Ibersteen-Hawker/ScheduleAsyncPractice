@@ -1,4 +1,5 @@
 "use strict";
+let current = null;
 class _Class {
   constructor(name, teacher, number, period, subject) {
     (this.D = document), (this.name = name);
@@ -13,7 +14,9 @@ class _Class {
       "tableCell",
       "col-12",
       "col-sm-6",
-      "col-md-3"
+      "col-md-4",
+      "col-lg-4",
+      "col-xxl-3"
     );
     const innerCell = this.create("div", "", "innerCell");
     const head = this.create("div", "", "tableHead");
@@ -33,36 +36,111 @@ class _Class {
     return e;
   }
   print(out) {
-    out.append(this.cell);
+    out.insertAdjacentElement("beforeend", this.cell);
   }
 }
 function run(name, output) {
   output.classList.add("loading");
-  try {
-    fetch(name)
-      .then((data) => data.json())
-      .then((data) => {
-        output.classList.remove("loading");
-        output.innerHTML = "";
-        data.forEach(
-          ({ className, teacher, roomNumber, period, subjectArea }) => {
-            const elem = new _Class(
-              className,
-              teacher,
-              `Room: ${roomNumber}`,
-              `Period: ${period}`,
-              subjectArea
-            );
-            elem.print(output);
-          }
-        );
-      });
-  } catch (error) {
-    output.innerHTML = "Error Loading";
-  }
+  fetch(name)
+    .then((data) => data.json())
+    .then((data) => {
+      output.classList.remove("loading");
+      output.innerHTML = "";
+      current = data;
+      data.forEach(
+        ({ className, teacher, roomNumber, period, subjectArea }) => {
+          const elem = new _Class(
+            className,
+            teacher,
+            `Room: ${roomNumber}`,
+            `Period: ${period}`,
+            subjectArea
+          );
+          elem.print(output);
+        }
+      );
+    })
+    .catch(
+      () =>
+        (output.innerHTML =
+          "Error Loading Files, please try reloading the webpage. If this error persists, know that we will fix it within two days.")
+    );
 }
 const outElem = document.querySelector("#out");
 document.querySelector("#options").addEventListener("change", () => {
   run(document.querySelector("#options").value, outElem);
+});
+document.querySelector("#sorter").addEventListener("change", () => {
+  const v = document.querySelector("#sorter").value;
+  switch (v) {
+    case "className":
+      current = current.sort((a, b) => a[v].charCodeAt(0) - b[v].charCodeAt(0));
+      break;
+    case "teacher":
+      current = current.sort(
+        (a, b) =>
+          a[v].split(" ")[1].charCodeAt(0) - b[v].split(" ")[1].charCodeAt(0)
+      );
+      break;
+    case "period":
+      current = current.sort((a, b) => Number(a[v]) - Number(b[v]));
+      break;
+    case "roomNumber":
+      current = current.sort(
+        (a, b) => Number(a[v].slice(1)) - Number(b[v].slice(1))
+      );
+      break;
+    case "subjectArea":
+      current = current.sort((a, b) => a[v].charCodeAt(0) - b[v].charCodeAt(0));
+      break;
+    default:
+      throw new Error("invalid");
+  }
+  outElem.textContent = "";
+  current.forEach(({ className, teacher, roomNumber, period, subjectArea }) => {
+    const elem = new _Class(
+      className,
+      teacher,
+      `Room: ${roomNumber}`,
+      `Period: ${period}`,
+      subjectArea
+    );
+    elem.print(outElem);
+  });
+});
+document.querySelector("#searcher").addEventListener("keyup", () => {
+  const v = document.querySelector("#searcher").value;
+  let fuse = new Fuse(current, {
+    keys: ["teacher", "period", "className"],
+    threshold: 0.4,
+  });
+  let results = fuse.search(v);
+  outElem.textContent = "";
+  if (results.length !== 0) {
+    results.forEach(({ item }) => {
+      const { className, teacher, roomNumber, period, subjectArea } = item;
+      const elem = new _Class(
+        className,
+        teacher,
+        `Room: ${roomNumber}`,
+        `Period: ${period}`,
+        subjectArea
+      );
+      elem.print(outElem);
+    });
+  } else {
+    current.forEach(
+      ({ className, teacher, roomNumber, period, subjectArea }) => {
+        const elem = new _Class(
+          className,
+          teacher,
+          `Room: ${roomNumber}`,
+          `Period: ${period}`,
+          subjectArea
+        );
+        elem.print(outElem);
+      }
+    );
+  }
 });
 run("remy.json", outElem);
