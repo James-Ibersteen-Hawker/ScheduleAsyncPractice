@@ -258,18 +258,10 @@ footer {
   width: 100%;
   max-height: 150px;
   min-height: 100px;
-  margin-top: 20px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border-top: 2px solid rgba(61, 61, 61, 0.8);
   box-shadow: 0px 0px 5px black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 20px;
-  text-align: center;
-  font-style: italic;
-  font-family: "Times New Roman", Times, serif;
   user-select: none;
 }
 #out {
@@ -308,15 +300,18 @@ footer svg {
 }
 footer div {
   padding: 15px;
+  display: block;
+  width: 100%;
+  min-height: 100px;
+  max-height: 150px;
+  margin: 0 !important;
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(5px);
-  border: 3px outset black;
-  border-radius: 50px;
-  transform: skew(-10deg);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   font-family: "Bowlby One SC", sans-serif;
-  font-weight: 400;
   font-size: 18px;
   color: rgba(0, 0, 0, 0.813);
   font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
