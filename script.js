@@ -7,20 +7,28 @@ class _Class {
     this.cell = this.init();
   }
   init() {
-    const cell = this.create("div", "", "tableCell");
+    const cell = this.create(
+      "div",
+      "",
+      "tableCell",
+      "col-12",
+      "col-sm-6",
+      "col-md-3"
+    );
+    const innerCell = this.create("div", "", "innerCell");
     const head = this.create("div", "", "tableHead");
     const body = this.create("div", "", "tableBody");
     const [name, teacher, number, period, subject] = Object.entries(this)
       .slice(1)
       .map((e) => this.create("p", e[1], e[0]));
-    cell.append(head), cell.append(body);
+    cell.append(innerCell), innerCell.append(head), innerCell.append(body);
     head.append(name), head.append(number);
     body.append(teacher), body.append(period), body.append(subject);
     return cell;
   }
   create(arg, txt = "", ...classes) {
     const e = this.D.createElement(arg);
-    if (classes.length > 0) e.classList.add(classes);
+    if (classes.length > 0) e.classList.add(...classes);
     e.innerHTML = txt;
     return e;
   }
