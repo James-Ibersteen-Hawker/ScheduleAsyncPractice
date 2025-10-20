@@ -1,0 +1,51 @@
+[
+  {
+    "className": "Statistics",
+    "teacher": "Mr. Juska",
+    "roomNumber": "A213",
+    "period": 1,
+    "subjectArea": "Math"
+  },
+  {
+    "className": "Hrs. Adv. Web Design",
+    "teacher": "Mr. Kilgore",
+    "roomNumber": "B111",
+    "period": 2,
+    "subjectArea": "Computer Science"
+  },
+  {
+    "className": "Physical Ed",
+    "teacher": "Mrs. Preston",
+    "roomNumber": "Gym",
+    "period": 3,
+    "subjectArea": "Physical Ed"
+  },
+  {
+    "className": "English IV",
+    "teacher": "Mr. Murphy",
+    "roomNumber": "E113",
+    "period": 4,
+    "subjectArea": "English"
+  },
+  {
+    "className": "Honors Italian IV",
+    "teacher": "Mrs. Raineri",
+    "roomNumber": "A205",
+    "period": 5,
+    "subjectArea": "Italian"
+  },
+  {
+    "className": "Sociology",
+    "teacher": "Mr. Wisniewski",
+    "roomNumber": "A105",
+    "period": 6,
+    "subjectArea": "Social Studies"
+  },
+  {
+    "className": "Financial Literacy",
+    "teacher": "Mr. Morgan",
+    "roomNumber": "A132",
+    "period": 7,
+    "subjectArea": "Financial Literacy"
+  }
+]

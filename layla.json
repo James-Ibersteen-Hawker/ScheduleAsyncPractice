@@ -1,0 +1,51 @@
+[
+  {
+    "period": 1,
+    "className": "AP US Government and Politics",
+    "teacher": "Mr. Yang",
+    "roomNumber": "A121",
+    "subjectArea": "Government"
+  },
+  {
+    "period": 2,
+    "className": "Hrs. Adv. Web Design",
+    "teacher": "Mr. Kilgore",
+    "roomNumber": "B111",
+    "subjectArea": "Computer Science"
+  },
+  {
+    "period": 3,
+    "className": "English 4",
+    "teacher": "Mr. Murphy",
+    "roomNumber": "E113",
+    "subjectArea": "English"
+  },
+  {
+    "period": 4,
+    "className": "Health 12",
+    "teacher": "Mrs. Scollo",
+    "roomNumber": "C130",
+    "subjectArea": "Health"
+  },
+  {
+    "period": 5,
+    "className": "Applied Art 1",
+    "teacher": "Ms. Rucci",
+    "roomNumber": "D101",
+    "subjectArea": "Art"
+  },
+  {
+    "period": 6,
+    "className": "Criminology and Law",
+    "teacher": "Mrs. Quinn",
+    "roomNumber": "A107",
+    "subjectArea": "Social Sciences"
+  },
+  {
+    "period": 7,
+    "className": "Statistics",
+    "teacher": "Ms. Altillio",
+    "roomNumber": "A213",
+    "subjectArea": "Math"
+  }
+]

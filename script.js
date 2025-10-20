@@ -21,10 +21,19 @@ class _Class {
     const innerCell = this.create("div", "", "innerCell");
     const head = this.create("div", "", "tableHead");
     const body = this.create("div", "", "tableBody");
+    const svg = `<div class="svgDiv"><svg viewBox="0 0 50 50"
+          style="display: block; height: 100%; width: 100%"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none">
+    <path d="M 50 0 L 0 50 L 50 50 Z" fill="#00400C"/>
+    <path d="M 0 0 A 50 50 0 0 0 50 50 L 0 200 Z" fill="green"/>
+    
+    </svg></div>`;
     const [name, teacher, number, period, subject] = Object.entries(this)
       .slice(1)
       .map((e) => this.create("p", e[1], e[0]));
     cell.append(innerCell), innerCell.append(head), innerCell.append(body);
+    innerCell.insertAdjacentHTML("beforeend", svg);
     head.append(name), head.append(number);
     body.append(teacher), body.append(period), body.append(subject);
     return cell;
@@ -111,7 +120,7 @@ document.querySelector("#sorter").addEventListener("change", () => {
 document.querySelector("#searcher").addEventListener("keyup", () => {
   const v = document.querySelector("#searcher").value;
   let fuse = new Fuse(current, {
-    keys: ["teacher", "period", "className"],
+    keys: ["teacher", "period", "className", "subjectArea", "roomNumber"],
     threshold: 0.4,
   });
   let results = fuse.search(v);
