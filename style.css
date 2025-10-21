@@ -179,8 +179,11 @@ header::before {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.51);
   margin-bottom: 10px;
 }
-select {
+select,
+input {
   user-select: none;
+  border-radius: 5px;
+  font-weight: 800;
 }
 .tableCell {
   position: relative;
@@ -311,10 +314,17 @@ footer div {
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(5px);
   font-family: "Bowlby One SC", sans-serif;
-  font-size: 18px;
-  color: rgba(0, 0, 0, 0.813);
+  font-size: 22px;
+  text-align: center;
+  color: rgba(63, 63, 63, 0.813);
   font-style: normal;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.number {
+  font-size: 18px;
+}
+.period {
+  font-size: 18px;
 }
